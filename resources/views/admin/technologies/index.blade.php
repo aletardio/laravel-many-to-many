@@ -6,10 +6,11 @@
             <div class="col-12">
                 <div class="d-flex justify-content-between align-items-center">
                     <h2>
-                        TYPES
+                        TECHNOLOGIES
                     </h2>
                     <div>
-                        <a href="{{ route('admin.projects.create') }}" class="btn btn-sm btn-primary">Aggiungi progetto</a>
+                        <a href="{{ route('admin.projects.create') }}" class="btn btn-sm btn-primary">Aggiungi nuova
+                            tecnologia</a>
                     </div>
                 </div>
                 <div class="col-12">
@@ -24,25 +25,25 @@
                             </tr>
                         </thead>
                         <tbody>
-                            @foreach ($types as $type)
+                            @foreach ($technologies as $technology)
                                 <tr>
-                                    <td>{{ $type->id }}</td>
-                                    <td>{{ $type->name }}</td>
-                                    <td>{{ $type->slug }}</td>
-                                    <td>{{ count($type->projects) }}</td>
+                                    <td>{{ $technology->id }}</td>
+                                    <td>{{ $technology->name }}</td>
+                                    <td>{{ $technology->slug }}</td>
+                                    <td>{{ count($technology->projects) }}</td>
                                     <td>
                                         <div class="d-flex">
-                                            <a href="{{ route('admin.types.show', ['type' => $type->id]) }}"
+                                            <a href="{{ route('admin.technologies.show', ['technology' => $technology->id]) }}"
                                                 title="Visualizza progetto" class="btn btn-sm btn-square btn-primary me-2">
                                                 <i class="fas fa-eye"></i>
                                             </a>
                                             <button type="submit" class="btn btn-sm btn-square btn-danger"
                                                 data-bs-toggle="modal"
-                                                data-bs-target="#modal_type_delete-{{ $type->id }}" data-type="types"
-                                                data-title="{{ $type->title }}">
+                                                data-bs-target="#modal_technology_delete-{{ $technology->id }}"
+                                                data-type="technologies" data-title="{{ $technology->name }}">
                                                 <i class="fas fa-trash"></i>
                                             </button>
-                                            @include('admin.projects.partials.modal_type_delete')
+
                                         </div>
                                     </td>
                                 </tr>
