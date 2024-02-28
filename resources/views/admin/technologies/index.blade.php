@@ -43,7 +43,7 @@
                                                 data-type="technologies" data-title="{{ $technology->name }}">
                                                 <i class="fas fa-trash"></i>
                                             </button>
-
+                                            @include('admin.projects.partials.modal_technology_delete')
                                         </div>
                                     </td>
                                 </tr>

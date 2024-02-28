@@ -9,7 +9,7 @@
                         TYPES
                     </h2>
                     <div>
-                        <a href="{{ route('admin.projects.create') }}" class="btn btn-sm btn-primary">Aggiungi progetto</a>
+                        <a href="{{ route('admin.projects.create') }}" class="btn btn-sm btn-primary">Aggiungi tipo</a>
                     </div>
                 </div>
                 <div class="col-12">
