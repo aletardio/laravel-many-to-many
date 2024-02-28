@@ -12,6 +12,13 @@
                     <strong>{{ !empty($project->type->name) ? $project->type->name : 'Senza tipo' }}</strong>
                 </h5>
                 <p class="my-2">{{ $project->description }}</p>
+                <p class="my-2">
+                    @forelse ($project->technologies as $technology)
+                        {{ $technology->name }}
+                    @empty
+                        Il progetto non ha tecnologie associate
+                    @endforelse
+                </p>
             </div>
         </div>
     </div>
