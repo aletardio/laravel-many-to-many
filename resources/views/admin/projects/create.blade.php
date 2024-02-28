@@ -49,6 +49,16 @@
                         </select>
                     </div>
                     <div class="form-group my-3">
+                        <label for="technology_id" class="control-label">Seleziona tecnologia</label>
+                        <div>
+                            @foreach ($technologies as $technology)
+                                <input type="checkbox" name="technologies[]" id="technology-{{ $technology->id }}"
+                                    class="form-check-input" value="{{ $technology->id }}" @checked(is_array(old('technologies')) && in_array($technology->id, old('technologies')))>
+                                <label for="" class="form-check-label">{{ $technology->name }}</label>
+                            @endforeach
+                        </div>
+                    </div>
+                    <div class="form-group my-3">
                         <label for="description" class="control-label">Descrizione:</label>
                         <textarea name="description" id="description" cols="100" rows="10" placeholder="Descrizione"
                             class="form-control @error('description') is-invalid @enderror" required>{{ old('description') }}</textarea>
